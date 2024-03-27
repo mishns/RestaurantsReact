@@ -1,6 +1,5 @@
 import { validateResponse } from "@api/validateResponse";
-
-const API_URL = "http://localhost:3000";
+import { API_URL } from "@constants";
 
 export interface Restaurant {
   id: string;

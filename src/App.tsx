@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./app.css";
+import { Card } from "@ui/Card";
 
 function App() {
   return (
@@ -15,7 +16,12 @@ function App() {
       </header>
       <main>
         <input placeholder="Search for restaurants" />
-        <section></section>
+        <Card
+          imgPath={"burger-joint.png"}
+          title={"Burger Joint"}
+          descr={"American, 4.6 stars"}
+          cardStars={4}
+        />
       </main>
       <footer>
         <p>Privacy Policy</p>

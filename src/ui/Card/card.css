@@ -1,4 +1,4 @@
-.card {
+.Card {
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -6,17 +6,22 @@
   padding: 5px;
 }
 
-.cardImg {
+.CardImg {
   width: 200px;
   height: 200px;
 }
 
-.cardInfo {
+.CardInfo {
   display: flex;
   gap: 5px;
 }
 
-.cardStar {
+.CardStar {
   width: 50px;
   height: 50px;
+}
+
+.StarsList {
+  display: flex;
+  gap: 50px;
 }

@@ -4,7 +4,7 @@
   --color-main: #333333;
   --color-main_lighten: #3333331a;
   --color-secondary: #ffffff;
-  --color-accent: #cc6633;
+  --color-accent: orange;
   --color-positive: #A4CC33;
   --color-negative: #CC3361;
   --color-grey_light: #f4f4f4;
@@ -27,7 +27,6 @@
 }
 
 :global * {
-  color: var(--color-main);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,0 +1,15 @@
+.RatingStar {
+  color: var(--color-accent);
+  width: 25px;
+  height: 25px;
+  fill: none;
+  transition: fill .3s ease-in-out;
+}
+
+.RatingStar:hover {
+  fill:var(--color-accent);
+}
+
+.RatingStar_painted {
+  fill: var(--color-accent);
+}
