@@ -1,29 +1,37 @@
 import { default as React, FC, useState } from "react";
-import styles from "./card.css";
+import styles from "./restcard.css";
 import { RatingStar } from "@ui/RatingStar";
 import { MAX_STARS } from "@constants";
 
-interface CardProps {
+interface RestCardProps {
+  id: string;
   imgPath: string;
   title: string;
   descr: string;
   cardStars: number;
+  onRatingClick: (id: string, raiting: number) => void;
 }
 
-export const Card: FC<CardProps> = ({ imgPath, title, descr, cardStars }) => {
+export const Card: FC<RestCardProps> = ({
+  id,
+  imgPath,
+  title,
+  descr,
+  cardStars,
+  onRatingClick,
+}) => {
   const [stars, setStars] = useState(cardStars);
 
   function handleStarHover(starValue: number) {
     setStars(starValue);
-    console.log(`${starValue} hover`);
   }
 
   function handleStarUnhover() {
     setStars(cardStars);
   }
 
-  function handleClick(starValue: number) {
-    console.log(`${starValue} click`);
+  function handleStarClick(starValue: number) {
+    onRatingClick(id, starValue);
   }
 
   return (
@@ -43,7 +51,7 @@ export const Card: FC<CardProps> = ({ imgPath, title, descr, cardStars }) => {
             painted={true}
             onHover={handleStarHover}
             onUnhover={handleStarUnhover}
-            onClick={handleClick}
+            onClick={handleStarClick}
           />
         ))}
         {Array.from({ length: MAX_STARS - stars }).map((_, index) => (
@@ -53,7 +61,7 @@ export const Card: FC<CardProps> = ({ imgPath, title, descr, cardStars }) => {
             painted={false}
             onHover={handleStarHover}
             onUnhover={handleStarUnhover}
-            onClick={handleClick}
+            onClick={handleStarClick}
           />
         ))}
       </ul>
