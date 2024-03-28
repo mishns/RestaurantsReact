@@ -3,8 +3,19 @@ import styles from "./searchinput.css";
 
 interface SearchInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string;
 }
 
-export const SearchInput: FC<SearchInputProps> = ({ onChange }) => {
-  return <input className="SearchInput" type="text" onChange={onChange} />;
+export const SearchInput: FC<SearchInputProps> = ({
+  onChange,
+  placeholder,
+}) => {
+  return (
+    <input
+      className={styles.SearchInput}
+      type="text"
+      placeholder={placeholder}
+      onChange={onChange}
+    />
+  );
 };

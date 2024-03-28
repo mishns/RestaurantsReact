@@ -5,6 +5,7 @@
   --color-main_lighten: #3333331a;
   --color-secondary: #ffffff;
   --color-accent: orange;
+  --color-text-accent: rgb(191, 164, 162);
   --color-positive: #A4CC33;
   --color-negative: #CC3361;
   --color-grey_light: #f4f4f4;
@@ -13,6 +14,8 @@
   --color-grey_darken: #c4c4c4;
   --color-grey_dark: #999999;
   --color-grey_darkest: #666666;
+  --color-background: rgb(254, 250, 257);
+  --color-background_darken: rgb(246, 234, 234);
 }
 
 
@@ -22,29 +25,28 @@
   overflow-x: hidden;
 }
 
-:global body {
-  overflow-x: hidden;
-}
-
 :global * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-:global body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--color-grey_light);
-  font-size: 14px;
-  line-height: 1.2;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 :global *,
 :global *::before,
 :global *::after {
   box-sizing: inherit;
+}
+
+:global body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 :global a {
@@ -86,14 +88,17 @@
 
 :global main {
   flex: 1 1 0;
+  height: 100%;
 }
 
 :global footer {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  margin-top: auto;
   gap: 96px;
-  height: 50px;
+  height: 130px;
   padding: 24px 0 48px;
-  color: #b3adad;
+  color: var(--color-text-accent);
 }
 

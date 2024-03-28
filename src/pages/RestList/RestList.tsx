@@ -41,7 +41,10 @@ export const RestList: FC<RestListProps> = ({ restList }) => {
 
   return (
     <div className={styles.RestListBlock}>
-      <SearchInput onChange={handleSearchChange} />
+      <SearchInput
+        onChange={handleSearchChange}
+        placeholder="Search for restaurants"
+      />
       <ul className={styles.RestList}>
         {filteredRestList.map(rest => (
           <Card

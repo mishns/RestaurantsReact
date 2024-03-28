@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./app.css";
 import { FetchCardList } from "@pages/RestList/FetchCardList";
 import { LogoIcon } from "@ui/LogoIcon";
+import { Content } from "@pages/Content";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         </div>
       </header>
       <main>
-        <FetchCardList />
+        <Content>
+          <FetchCardList />
+        </Content>
       </main>
       <footer>
         <p>Privacy Policy</p>

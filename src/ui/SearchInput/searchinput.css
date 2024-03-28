@@ -1,0 +1,8 @@
+.SearchInput {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-background_darken);
+}

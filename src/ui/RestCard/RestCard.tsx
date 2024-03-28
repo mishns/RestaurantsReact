@@ -42,7 +42,7 @@ export const Card: FC<RestCardProps> = ({
         alt={`${title} restaurant picture`}
       />
       <h2 className={styles.CardTitle}>{title}</h2>
-      <span className="CardDescr">{descr}</span>
+      <span className={styles.CardDescr}>{descr}</span>
       <ul className={styles.StarsList}>
         {Array.from({ length: stars }).map((_, index) => (
           <RatingStar
