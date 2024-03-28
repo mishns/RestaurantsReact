@@ -1,0 +1,14 @@
+.Corporation {
+  align-self: flex-end;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: auto;
+  gap: 96px;
+  height: 130px;
+  padding: 24px 0 48px;
+  color: var(--color-text-accent);
+}

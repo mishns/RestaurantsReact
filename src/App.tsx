@@ -1,31 +1,20 @@
 import React from "react";
 import styles from "./app.css";
-import { FetchCardList } from "@pages/RestList/FetchCardList";
-import { LogoIcon } from "@ui/LogoIcon";
+import { FetchRestList } from "@pages/RestList/FetchRestList";
 import { Content } from "@pages/Content";
+import { Header } from "@pages/Header";
+import { Footer } from "@pages/Footer";
 
 function App() {
   return (
     <div className={styles.App}>
-      <header>
-        <div className={styles.Logo}>
-          <LogoIcon className={styles.LogoIcon} width={30} height={30} />
-          <h1>Eats</h1>
-        </div>
-        <div className={styles.Profile}>
-          <img alt="profile" src="/avatar.png" />
-        </div>
-      </header>
-      <main>
+      <Header />
+      <main className={styles.Main}>
         <Content>
-          <FetchCardList />
+          <FetchRestList />
         </Content>
       </main>
-      <footer>
-        <p>Privacy Policy</p>
-        <p className={styles.Corporation}>2022 Eats</p>
-        <p>Terms Of Service</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

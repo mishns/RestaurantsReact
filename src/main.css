@@ -77,28 +77,3 @@
   text-indent: 0;
   list-style: none;
 }
-
-:global header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 16px;
-  border-bottom: 1px solid #e0dada;
-}
-
-:global main {
-  flex: 1 1 0;
-  height: 100%;
-}
-
-:global footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: auto;
-  gap: 96px;
-  height: 130px;
-  padding: 24px 0 48px;
-  color: var(--color-text-accent);
-}
-

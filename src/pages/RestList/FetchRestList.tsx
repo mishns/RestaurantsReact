@@ -6,9 +6,7 @@ import { queryClient } from "@api/queryClient";
 import { Loader } from "@ui/Loader";
 import { RestList } from "@pages/RestList/RestList";
 
-interface FetchCardListProps {}
-
-export const FetchCardList: FC<FetchCardListProps> = () => {
+export const FetchRestList: FC = () => {
   const restQuery = useQuery(
     { queryFn: getRestaurants, queryKey: ["restaurants"] },
     queryClient,
