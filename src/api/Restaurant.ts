@@ -1,31 +1,40 @@
 import { validateResponse } from "@api/validateResponse";
 import { API_URL } from "@constants";
+import { z } from "zod";
 
-export interface Restaurant {
-  id: string;
-  name: string;
-  description: string;
-  raiting: number;
-  url: string;
+const restaurantSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  raiting: z.number(),
+  url: z.string(),
+});
+export type Restaurant = z.infer<typeof restaurantSchema>;
+
+const restaurantListSchema = z.array(restaurantSchema);
+export type RestaurantList = z.infer<typeof restaurantListSchema>;
+
+export function getRestaurants(): Promise<RestaurantList> {
+  return fetch(`${API_URL}/restaurants`)
+    .then(validateResponse)
+    .then(res => res.json())
+    .then(data => restaurantListSchema.parse(data));
 }
 
-export const getRestaurants = (): Promise<Restaurant[]> =>
-  fetch(`${API_URL}/restaurants`)
-    .then(validateResponse)
-    .then(res => res.json());
-
-interface UpdateRestaurantRaitingArgs {
+export interface UpdateRestRaitingI {
   id: Restaurant["id"];
   raiting: Restaurant["raiting"];
 }
 
-export const updateRestaurantRating = ({
+export function updateRestaurantRating({
   id,
   raiting,
-}: UpdateRestaurantRaitingArgs): Promise<Restaurant> =>
-  fetch(`${API_URL}/restaurants/${id}`, {
+}: UpdateRestRaitingI): Promise<Restaurant> {
+  return fetch(`${API_URL}/restaurants/${id}`, {
     method: "PATCH",
     body: JSON.stringify({ raiting }),
   })
     .then(validateResponse)
-    .then(res => res.json());
+    .then(res => res.json())
+    .then(data => restaurantSchema.parse(data));
+}

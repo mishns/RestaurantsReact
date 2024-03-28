@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./app.css";
-import { Card } from "@ui/Card";
+import { FetchCardList } from "@pages/RestList/FetchCardList";
 
 function App() {
   return (
@@ -15,13 +15,7 @@ function App() {
         </div>
       </header>
       <main>
-        <input placeholder="Search for restaurants" />
-        <Card
-          imgPath={"burger-joint.png"}
-          title={"Burger Joint"}
-          descr={"American, 4.6 stars"}
-          cardStars={4}
-        />
+        <FetchCardList />
       </main>
       <footer>
         <p>Privacy Policy</p>

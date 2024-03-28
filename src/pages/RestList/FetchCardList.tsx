@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getRestaurants } from "@api/Restaurant";
 import { queryClient } from "@api/queryClient";
 import { Loader } from "@ui/Loader";
-import { CardList } from "@pages/RestList/RestList";
+import { RestList } from "@pages/RestList/RestList";
 
 interface FetchCardListProps {}
 
@@ -22,7 +22,7 @@ export const FetchCardList: FC<FetchCardListProps> = () => {
       return <span>{restQuery.error.message}</span>;
     }
     case "success": {
-      return <CardList restList={restQuery.data} />;
+      return <RestList restList={restQuery.data} />;
     }
   }
 };
