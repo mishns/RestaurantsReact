@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./app.css";
 import { FetchCardList } from "@pages/RestList/FetchCardList";
+import { LogoIcon } from "@ui/LogoIcon";
 
 function App() {
   return (
-    <div className={styles.app}>
+    <div className={styles.App}>
       <header>
-        <div className={styles.logo}>
-          {/* <LogoIcon width={16} height={16} className={styles.logo__icon} /> */}
-          <span>Eats</span>
+        <div className={styles.Logo}>
+          <LogoIcon className={styles.LogoIcon} width={30} height={30} />
+          <h1>Eats</h1>
         </div>
-        <div className={styles.profile}>
+        <div className={styles.Profile}>
           <img alt="profile" src="/avatar.png" />
         </div>
       </header>
@@ -19,7 +20,7 @@ function App() {
       </main>
       <footer>
         <p>Privacy Policy</p>
-        <p className={styles.corporation}>2022 Eats</p>
+        <p className={styles.Corporation}>2022 Eats</p>
         <p>Terms Of Service</p>
       </footer>
     </div>
